@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <div>
+      <div className={classes.content}>
         <Outlet />
       </div>
     </>

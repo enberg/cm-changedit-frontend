@@ -1,0 +1,43 @@
+.signup-form {
+    width: 300px;
+    border: 2px solid black;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
