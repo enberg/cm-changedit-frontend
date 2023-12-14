@@ -1,6 +1,7 @@
 import { ActionFunctionArgs, Form, redirect, useActionData } from "react-router-dom"
 import classes from './SignIn.module.css';
 import auth from "../lib/auth";
+import { ActionData } from "../types";
 
 export const action = async (args: ActionFunctionArgs) => {
     const { request } = args;
@@ -31,7 +32,8 @@ export const action = async (args: ActionFunctionArgs) => {
 }
 
 const SignIn = () => {
-    const error = useActionData() as { message: string  } | undefined;
+    const error = useActionData() as ActionData;
+    
     return (
         <div className={classes.signupForm}>
             <h2>Sign in to Changedit</h2>

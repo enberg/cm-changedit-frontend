@@ -11,9 +11,14 @@ const Header = () => {
             <h1>Changedit</h1>
             <div className={classes.headerActions}>
                 {isAuthenticated ?
-                    <fetcher.Form method='post' action='/sign-out'>
-                        <button type='submit'>Sign out</button>
-                    </fetcher.Form>
+                    <>
+                        <Link to="/create-post" >
+                            <button>New post</button>
+                        </Link>
+                        <fetcher.Form method='post' action='/sign-out'>
+                            <button type='submit'>Sign out</button>
+                        </fetcher.Form>
+                    </>
                     :
                     <>
                         <Link to="/sign-up">

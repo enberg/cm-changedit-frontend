@@ -1,0 +1,79 @@
+.post {
+  display: flex;
+  align-items: start;
+  border: 2px solid black;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.vote {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.vote button {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.post-info h2 {
+  margin: 0;
+}
+
+.post-info p {
+  margin: 5px 0;
+}
+
+.post-info span, .post-body {
+  display: block;
+  margin-top: 10px;
+}
+
+.comment-form h2, .comments h2 {
+  margin-top: 20px;
+}
+
+.comment-form {
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  height: 100px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.comments {
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.comment {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.comment-author {
+  font-weight: bold;
+}
