@@ -38,6 +38,7 @@ const ShowPost = () => {
           )}
         </div>
       </div>
+      { post.comments?.map(comment => <p key={comment._id}>{comment.body} - {comment.author.userName}</p>) }
     </>
   );
 }
