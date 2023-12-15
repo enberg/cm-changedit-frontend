@@ -64,16 +64,8 @@
   cursor: pointer;
 }
 
-.comments {
+.post-comments {
+  margin-top: 10px;
   border: 2px solid black;
   padding: 20px;
-}
-
-.comment {
-  border-top: 1px solid #ccc;
-  padding: 10px 0;
-}
-
-.comment-author {
-  font-weight: bold;
 }
