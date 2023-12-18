@@ -1,6 +1,9 @@
 import { Link, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import { Post } from "../types";
 import classes from './ShowPost.module.css';
+import CommentComponent from "../components/Comment";
+import CommentForm from "../components/CommentForm";
+import VoteComponent from "../components/Vote";
 
 export const loader = async (args: LoaderFunctionArgs) => {
   const { id } = args.params;
@@ -22,8 +25,9 @@ const ShowPost = () => {
   return (
     <>
       <div className={classes.post}>
+        <VoteComponent post={post} />
         <div className={classes.postInfo}>
-          { post.link ? (
+          {post.link ? (
             <Link to={post.link}>
               <h2>{post.title}<span className={classes.postUrl}>({post.link})</span></h2>
             </Link>
@@ -31,14 +35,17 @@ const ShowPost = () => {
             <h2>{post.title}</h2>
           )}
           <p>by {post.author.userName}</p>
-          { post.body && (
+          {post.body && (
             <div className={classes.postBody}>
               <p>{post.body}</p>
             </div>
           )}
         </div>
       </div>
-      { post.comments?.map(comment => <p key={comment._id}>{comment.body} - {comment.author.userName}</p>) }
+
+      <CommentForm postId={post._id} />
+
+      {post.comments?.map(comment => <CommentComponent key={comment._id} comment={comment} />)}
     </>
   );
 }

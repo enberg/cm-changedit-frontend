@@ -18,5 +18,6 @@ export interface Post {
         _id: string;
         userName: string
     }
-    comments?: Comment[]
+    comments?: Comment[],
+    score?: number;
 }

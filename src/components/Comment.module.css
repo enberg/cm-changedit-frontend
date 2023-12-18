@@ -1,0 +1,12 @@
+.comment {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.comment:first-of-type {
+  border-top: 0;
+}
+
+.comment-author {
+  font-weight: bold;
+}
