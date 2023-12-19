@@ -1,0 +1,9 @@
+.vote {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.vote button {
+  display: block;
+  margin-bottom: 5px;
+}

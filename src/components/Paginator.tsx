@@ -17,7 +17,7 @@ const Paginator = (prop: PaginatorProps) => {
 
     return (<div className={classes.pagination}>
         {pages.map(page => (
-            <button key={page} className={page === prop.currentPage ? classes.active : ''} onClick={() => prop.setPage(page)}>
+            <button key={page} className={page == prop.currentPage ? classes.active : ''} onClick={() => prop.setPage(page)}>
                 {page}
             </button>
         ))}

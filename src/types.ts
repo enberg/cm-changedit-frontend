@@ -16,7 +16,8 @@ export interface Post {
     body?: string;
     author: {
         _id: string;
-        userName: string
+        userName: string;
     }
-    comments?: Comment[]
+    comments?: Comment[];
+    score: number;
 }

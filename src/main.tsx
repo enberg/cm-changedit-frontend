@@ -10,6 +10,8 @@ import auth from './lib/auth.ts'
 import CreatePost, { action as createPostAction } from './routes/CreatePost.tsx'
 import RequireAuth from './components/RequireAuth.tsx'
 import ShowPost, { loader as showPostLoader } from './routes/ShowPost.tsx'
+import { action as createCommentAction } from './components/CommentForm.tsx'
+import { action as voteAction } from './components/Vote.tsx';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
             action: createPostAction,
             element: <CreatePost />
           },
+          {
+            path: "/posts/:postId/comments",
+            action: createCommentAction
+          },
+          {
+            path: "/posts/:postId/vote",
+            action: voteAction
+          }
         ]
       },
     ]
