@@ -4,7 +4,7 @@ import auth from "../lib/auth";
 import { ActionData } from "../types";
 
 export const action = async (args: ActionFunctionArgs) => {
-    const { request } = args;
+    const { request } = args;
 
     const formData = await request.formData();
 

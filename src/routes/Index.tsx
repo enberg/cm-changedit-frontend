@@ -5,7 +5,8 @@ import Paginator from "../components/Paginator";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
     const url = new URL(request.url)
-    const page = url.searchParams.get('page') || 1;
+    const pageParam = url.searchParams.get('page');
+    const page = pageParam ? parseInt(pageParam, 10) : 1;
 
     const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts?page=' + page, {
         headers: {
@@ -13,17 +14,13 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
         }
     })
 
-    const backendResponse = await response.json();
+    const backendResponse = await response.json() as { posts: Post[], totalPages: number };
 
     return { page, ...backendResponse }
 }
-/*
-return {
-    posts: await response.json()
-}
-*/
+
 const Index = () => {
-    const data = useLoaderData() as { posts: Post[], totalPages: number, page: number };   
+    const data = useLoaderData() as Awaited<ReturnType<typeof loader>>;
     const [searchParams, setSearchParams] = useSearchParams();
 
     return (
