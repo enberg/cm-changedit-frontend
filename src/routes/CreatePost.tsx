@@ -1,30 +1,6 @@
-import { ActionFunctionArgs, Form, redirect, useActionData } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
 import classes from "./CreatePost.module.css";
 import { ActionData } from "../types";
-import auth from "../lib/auth";
-
-export const action = async ({ request }: ActionFunctionArgs) => {
-    const formData = await request.formData();
-
-    const postData = Object.fromEntries(formData.entries());
-
-    const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${auth.getJWT()}`,
-        },
-        body: JSON.stringify(postData),
-    });
-
-    if (!response.ok) {
-        const { message } = await response.json();
-
-        return { message };
-    }
-
-    return redirect('/')
-}
 
 const CreatePost = () => {
     const error = useActionData() as ActionData;
