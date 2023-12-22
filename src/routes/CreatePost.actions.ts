@@ -4,15 +4,12 @@ import auth from "../lib/auth";
 export const action = async ({ request }: ActionFunctionArgs) => {
     const formData = await request.formData();
 
-    const postData = Object.fromEntries(formData.entries());
-
     const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': `Bearer ${auth.getJWT()}`,
         },
-        body: JSON.stringify(postData),
+        body: formData
     });
 
     if (!response.ok) {

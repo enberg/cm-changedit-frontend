@@ -29,6 +29,10 @@
   margin-top: 10px;
 }
 
+.post-image {
+  max-width: 100%;
+}
+
 .comment-form h2, .comments h2 {
   margin-top: 20px;
 }

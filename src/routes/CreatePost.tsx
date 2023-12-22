@@ -8,7 +8,7 @@ const CreatePost = () => {
     return (
         <div className={classes.createPostForm}>
             <h2>Create post</h2>
-            <Form method="post">
+            <Form method="post" encType="multipart/form-data">
                 {error && <p><b>Error:</b> {error.message}</p>}
 
                 <div className={classes.formGroup}>
@@ -22,6 +22,10 @@ const CreatePost = () => {
                 <div className={classes.formGroup}>
                     <label htmlFor="body">Body (optional)</label>
                     <textarea name="body" id="body" />
+                </div>
+                <div className={classes.formGroup}>
+                    <label htmlFor="image">Image (optional)</label>
+                    <input type="file" name="image" id="image" accept="image/*" />
                 </div>
                 <div>
                     <button type="submit">Create post</button>
